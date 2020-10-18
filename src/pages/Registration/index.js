@@ -112,7 +112,6 @@ const Registration = () => {
   ];
 
   const handleChange = (e) => {
-    console.log("lol", password, e.target);
     const { id, value } = e.target;
     setStateErrorMessages[id](value);
     setFormStates[id](value);
@@ -148,7 +147,6 @@ const Registration = () => {
     />
   ) : (
     <Desktop
-      isMobile={isMobile}
       firstName={firstName}
       firstNameErrorMessage={firstNameErrorMessage}
       lastName={lastName}
