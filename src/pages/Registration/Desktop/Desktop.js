@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Input from "../../../common/components/input/Input";
 import TextArea from "../../../common/components/input/TextArea";
 import WebBannerImage from "../../../common/assets/images/web-banner.png";
@@ -14,17 +14,6 @@ import {
   ButtonReset,
   Success,
 } from "./StyledComponents";
-import {
-  validateFirstName,
-  validateLastName,
-  validateAge,
-  validateMobileNumber,
-  validateEmail,
-  validateDescription,
-  validatePassword,
-  validateConfirmPassword,
-  matchPassword,
-} from "../../../common/utility/validations";
 
 const {
   LABEL_FIRST_NAME,
@@ -43,112 +32,29 @@ const {
   PLACEHOLDER_EMAIL,
 } = stringConstants;
 
-const Desktop = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [age, setAge] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [description, setDescription] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
-  const [firstNameErrorMessage, setFirstNameErrorMessage] = useState("");
-  const [lastNameErrorMessage, setLastNameErrorMessage] = useState("");
-  const [ageErrorMessage, setAgeErrorMessage] = useState("");
-  const [mobileNumberErrorMessage, setMobileNumberErrorMessage] = useState("");
-  const [emailErrorMessage, setEmailErrorMessage] = useState("");
-  const [descriptionErrorMessage, setDescriptionErrorMessage] = useState("");
-  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
-  const [
+const Desktop = (props) => {
+  const {
+    firstName,
+    firstNameErrorMessage,
+    lastName,
+    lastNameErrorMessage,
+    age,
+    ageErrorMessage,
+    mobileNumber,
+    mobileNumberErrorMessage,
+    email,
+    emailErrorMessage,
+    description,
+    descriptionErrorMessage,
+    password,
+    passwordErrorMessage,
+    confirmPassword,
     confirmPasswordErrorMessage,
-    setConfirmPasswordErrorMessage,
-  ] = useState("");
-  const [success, setSuccess] = useState(false);
-
-  const validate = () => {
-    setFirstNameErrorMessage(validateFirstName(firstName));
-    setLastNameErrorMessage(validateLastName(lastName));
-    setAgeErrorMessage(validateAge(age));
-    setMobileNumberErrorMessage(validateMobileNumber(mobileNumber));
-    setEmailErrorMessage(validateEmail(email));
-    setDescriptionErrorMessage(validateDescription(description));
-    setPasswordErrorMessage(validatePassword(password));
-    setConfirmPasswordErrorMessage(validateConfirmPassword(confirmPassword));
-    matchPassword(password, confirmPassword);
-  };
-
-  const handleReset = () => {
-    setFirstName("");
-    setLastName("");
-    setAge("");
-    setMobileNumber("");
-    setEmail("");
-    setDescription("");
-    setPassword("");
-    setConfirmPassword("");
-
-    setFirstNameErrorMessage("");
-    setLastNameErrorMessage("");
-    setAgeErrorMessage("");
-    setMobileNumberErrorMessage("");
-    setEmailErrorMessage("");
-    setDescriptionErrorMessage("");
-    setPasswordErrorMessage("");
-    setConfirmPasswordErrorMessage("");
-
-    setSuccess(false);
-  };
-
-  const handleSubmit = () => {
-    validate();
-    if (
-      !firstNameErrorMessage &&
-      !lastNameErrorMessage &&
-      !ageErrorMessage &&
-      !mobileNumberErrorMessage &&
-      !emailErrorMessage &&
-      !descriptionErrorMessage &&
-      !passwordErrorMessage &&
-      !confirmPasswordErrorMessage
-    ) {
-      setSuccess(true);
-    }
-  };
-
-  const setStateErrorMessages = [
-    (value) => setFirstNameErrorMessage(validateFirstName(value)),
-    (value) => setLastNameErrorMessage(validateLastName(value)),
-    (value) => setAgeErrorMessage(validateAge(value)),
-    (value) => setMobileNumberErrorMessage(validateMobileNumber(value)),
-    (value) => setEmailErrorMessage(validateEmail(value)),
-    (value) => setDescriptionErrorMessage(validateDescription(value)),
-    (value) => setPasswordErrorMessage(validatePassword(value)),
-    (value) => setConfirmPasswordErrorMessage(validateConfirmPassword(value)),
-  ];
-
-  const setFormStates = [
-    (value) => setFirstName(value),
-    (value) => setLastName(value),
-    (value) => setAge(value),
-    (value) => setMobileNumber(value),
-    (value) => setEmail(value),
-    (value) => setDescription(value),
-    (value) => setPassword(value),
-    (value) => setConfirmPassword(value),
-  ];
-
-  const handleChange = (e) => {
-    console.log("lol", password, e.target);
-    const { id, value } = e.target;
-    setStateErrorMessages[id](value);
-    setFormStates[id](value);
-    if ("6" === id) {
-      setConfirmPasswordErrorMessage(matchPassword(value, confirmPassword));
-    } else if ("7" === id) {
-      setConfirmPasswordErrorMessage(matchPassword(password, value));
-    }
-  };
+    handleChange,
+    handleReset,
+    handleSubmit,
+    success,
+  } = props;
 
   return (
     <>

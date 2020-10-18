@@ -42,12 +42,12 @@ const ErrorMessage = styled.div`
   font-size: 12px;
   font-family: Lato;
   font-weight: 400;
-  padding: 15px 6px;
+  padding: 0px 6px;
   color: red;
   ${(props) =>
     props.isMobile &&
     css`
-      padding-bottom: 0px;
+      padding: 15px 6px 0px 6px;
     `}
 `;
 
