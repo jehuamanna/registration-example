@@ -32,6 +32,7 @@ const {
 
   CARD_LABEL_PERSONAL_DETAILS,
   CARD_LABEL_PASSWORD,
+  CREATE_ACCOUNT_TITLE,
 } = stringConstants;
 
 const Mobile = (props) => {
@@ -63,7 +64,7 @@ const Mobile = (props) => {
     <>
       <OuterContainer>
         <img src={MobileBannerImage} width="100%" height="100%" alt="banner" />
-        <CreateAccount>Create an account</CreateAccount>
+        <CreateAccount>{CREATE_ACCOUNT_TITLE}</CreateAccount>
         <InputContainer>
           <Card label={CARD_LABEL_PERSONAL_DETAILS}>
             <Input

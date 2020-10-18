@@ -30,6 +30,8 @@ const {
   PLACEHOLDER_AGE,
   PLACEHOLDER_MOBILE_NUMBER,
   PLACEHOLDER_EMAIL,
+
+  CREATE_ACCOUNT_TITLE,
 } = stringConstants;
 
 const Desktop = (props) => {
@@ -62,7 +64,7 @@ const Desktop = (props) => {
         <img src={WebBannerImage} width="40%" height="100%" alt="banner" />
 
         <AccountFormContainer>
-          <CreateAccount>Create an account</CreateAccount>
+          <CreateAccount>{CREATE_ACCOUNT_TITLE}</CreateAccount>
           <Form onSubmit={() => null}>
             <Inputs>
               <Input
