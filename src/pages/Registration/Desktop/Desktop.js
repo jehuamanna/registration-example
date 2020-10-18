@@ -32,6 +32,9 @@ const {
   PLACEHOLDER_EMAIL,
 
   CREATE_ACCOUNT_TITLE,
+
+  RESET,
+  SUBMIT,
 } = stringConstants;
 
 const Desktop = (props) => {
@@ -154,8 +157,8 @@ const Desktop = (props) => {
               />
             </Inputs>
             <Buttons>
-              <ButtonReset onClick={handleReset}>RESET</ButtonReset>
-              <ButtonSubmit onClick={handleSubmit}>SUMBIT</ButtonSubmit>
+              <ButtonReset onClick={handleReset}>{RESET}</ButtonReset>
+              <ButtonSubmit onClick={handleSubmit}>{SUBMIT}</ButtonSubmit>
             </Buttons>
             <Success>{success ? "Success" : ""}</Success>
           </Form>

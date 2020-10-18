@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Input from "../../../common/components/input/Input";
 import Card from "../../../common/components/card/Card";
 import TextArea from "../../../common/components/input/TextArea";
@@ -32,7 +32,11 @@ const {
 
   CARD_LABEL_PERSONAL_DETAILS,
   CARD_LABEL_PASSWORD,
+
   CREATE_ACCOUNT_TITLE,
+
+  RESET,
+  SUMBIT,
 } = stringConstants;
 
 const Mobile = (props) => {
@@ -158,8 +162,8 @@ const Mobile = (props) => {
             onChange={handleChange}
           />
           <Buttons>
-            <ButtonReset onClick={handleReset}>RESET</ButtonReset>
-            <ButtonSubmit onClick={handleSubmit}>SUMBIT</ButtonSubmit>
+            <ButtonReset onClick={handleReset}>{RESET}</ButtonReset>
+            <ButtonSubmit onClick={handleSubmit}>{SUMBIT}</ButtonSubmit>
           </Buttons>
           <Success>{success ? "Success" : ""}</Success>
         </InputContainer>

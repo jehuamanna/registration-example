@@ -21,6 +21,9 @@ const stringContants = {
   CARD_LABEL_PASSWORD: "Password",
 
   CREATE_ACCOUNT_TITLE: "Create an account",
+
+  RESET: "RESET",
+  SUBMIT: "SUBMIT",
 };
 
 export default stringContants;
