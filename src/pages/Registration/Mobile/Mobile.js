@@ -36,7 +36,7 @@ const {
   CREATE_ACCOUNT_TITLE,
 
   RESET,
-  SUMBIT,
+  SUBMIT,
 } = stringConstants;
 
 const Mobile = (props) => {
@@ -163,7 +163,7 @@ const Mobile = (props) => {
           />
           <Buttons>
             <ButtonReset onClick={handleReset}>{RESET}</ButtonReset>
-            <ButtonSubmit onClick={handleSubmit}>{SUMBIT}</ButtonSubmit>
+            <ButtonSubmit onClick={handleSubmit}>{SUBMIT}</ButtonSubmit>
           </Buttons>
           <Success>{success ? "Success" : ""}</Success>
         </InputContainer>
